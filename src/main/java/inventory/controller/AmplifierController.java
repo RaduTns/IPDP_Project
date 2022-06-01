@@ -20,6 +20,18 @@ public class AmplifierController {
 	@Inject
 	DAOAmplifiersImplementation DAOAmpImp;
 	
+	public void delete(AmplifiersDTO amp) {
+		Amplifiers amplifier = new Amplifiers();
+		DTOMapper dtoMapper = new DTOMapper();	
+		try {
+			amplifier=dtoMapper.toAmplifiers(amp);
+			LOGGER.log(Level.INFO,"delete working as intended");
+			DAOAmpImp.delete(amplifier);
+		} catch (SQLException e) {
+			LOGGER.log(Level.SEVERE, "EROARE" + e);
+		}
+	}
+	
 	public List<AmplifiersDTO> getAll() {
 
 		List<AmplifiersDTO> amplifiersDTO = new ArrayList<>();

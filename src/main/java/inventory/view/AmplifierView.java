@@ -29,16 +29,19 @@ public class AmplifierView implements Serializable {
 	private List<DrumsDTO> drumsDTO = new ArrayList<>();
 
 	@PostConstruct
-	public void init() {		
+	public void init() {
 		amplifiersDTO = amplifierController.getAll();
 		drumsDTO = drumsController.getAll();
-		/*
-		 * for(AmplifiersDTO amplifier: amplifiersDTO) {
-		 * instrumentsFactory.getInstrument(MusicalInstrumentType.valueOf(amplifier.getType()));
-		 *
-		}*/
-	}
 
+		for (AmplifiersDTO amplifier : amplifiersDTO) {
+			instrumentsFactory.getInstrument(MusicalInstrumentType.valueOf(amplifier.getType()));
+		}
+
+	}
+	public void delete(AmplifiersDTO amp) {
+		amplifierController.delete(amp);
+	}
+	
 	public List<AmplifiersDTO> getAmplifiersDTO() {
 		return amplifiersDTO.stream().sorted(Comparator.comparing(AmplifiersDTO::getInvNr))
 				.collect(Collectors.toList());
@@ -49,14 +52,11 @@ public class AmplifierView implements Serializable {
 	}
 
 	public List<DrumsDTO> getDrumsDTO() {
-		return drumsDTO.stream().sorted(Comparator.comparing(DrumsDTO::getInvNr))
-				.collect(Collectors.toList());
+		return drumsDTO.stream().sorted(Comparator.comparing(DrumsDTO::getInvNr)).collect(Collectors.toList());
 	}
 
 	public void setDrumsDTO(List<DrumsDTO> drumsDTO) {
 		this.drumsDTO = drumsDTO;
 	}
-	
-	
 
 }

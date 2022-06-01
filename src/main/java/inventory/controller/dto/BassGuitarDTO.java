@@ -1,6 +1,6 @@
-package inventory.model;
+package inventory.controller.dto;
 
-public class AcousticGuitars implements Guitars {
+public class BassGuitarDTO {
 
 	private Integer invNr;
 	private String type;
@@ -8,12 +8,9 @@ public class AcousticGuitars implements Guitars {
 	private String price;
 	private String company;
 	private String guitarType;
-
-	public AcousticGuitars() {
-		super();
-	}
-
-	public AcousticGuitars(Integer invNr, String type, String model, String price, String company, String guitarType) {
+	private String stringsNumber;
+	public BassGuitarDTO(Integer invNr, String type, String model, String price, String company, String guitarType,
+			String stringsNumber) {
 		super();
 		this.invNr = invNr;
 		this.type = type;
@@ -21,70 +18,54 @@ public class AcousticGuitars implements Guitars {
 		this.price = price;
 		this.company = company;
 		this.guitarType = guitarType;
+		this.stringsNumber = stringsNumber;
 	}
-
-
-
-
-	@Override
+	public BassGuitarDTO() {
+		super();
+	}
 	public Integer getInvNr() {
-		// TODO Auto-generated method stub
 		return invNr;
 	}
-
 	public void setInvNr(Integer invNr) {
 		this.invNr = invNr;
 	}
-
-	@Override
 	public String getType() {
-		// TODO Auto-generated method stub
 		return type;
 	}
-
 	public void setType(String type) {
 		this.type = type;
 	}
-
-	@Override
 	public String getModel() {
-		// TODO Auto-generated method stub
 		return model;
 	}
-
 	public void setModel(String model) {
 		this.model = model;
 	}
-
-	@Override
 	public String getPrice() {
-		// TODO Auto-generated method stub
 		return price;
 	}
-
 	public void setPrice(String price) {
 		this.price = price;
 	}
-
-	@Override
 	public String getCompany() {
-		// TODO Auto-generated method stub
 		return company;
 	}
-
 	public void setCompany(String company) {
 		this.company = company;
 	}
-
-	@Override
-	public void setGuitarType(String guitarType) {
-		this.guitarType = guitarType;
-		
-	}
-
 	public String getGuitarType() {
 		return guitarType;
 	}
-
+	public void setGuitarType(String guitarType) {
+		this.guitarType = guitarType;
+	}
+	public String getStringsNumber() {
+		return stringsNumber;
+	}
+	public void setStringsNumber(String stringsNumber) {
+		this.stringsNumber = stringsNumber;
+	}
+	
+	
 	
 }
