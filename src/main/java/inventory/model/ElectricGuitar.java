@@ -92,11 +92,7 @@ public class ElectricGuitar implements Guitars {
 		return company;
 	}
 
-	@Override
-	public void setGuitarType(GuitarType guitarType) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	/*
 	 * @Override public void getStrings() { // TODO Auto-generated method stub

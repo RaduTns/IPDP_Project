@@ -1,6 +1,6 @@
-package inventory.model;
+package inventory.controller.dto;
 
-public class AcousticGuitars implements Guitars {
+public class AcousticGuitarsDTO {
 
 	private Integer invNr;
 	private String type;
@@ -9,11 +9,8 @@ public class AcousticGuitars implements Guitars {
 	private String company;
 	private String guitarType;
 
-	public AcousticGuitars() {
-		super();
-	}
-
-	public AcousticGuitars(Integer invNr, String type, String model, String price, String company, String guitarType) {
+	public AcousticGuitarsDTO(Integer invNr, String type, String model, String price, String company,
+			String guitarType) {
 		super();
 		this.invNr = invNr;
 		this.type = type;
@@ -23,12 +20,11 @@ public class AcousticGuitars implements Guitars {
 		this.guitarType = guitarType;
 	}
 
+	public AcousticGuitarsDTO() {
+		super();
+	}
 
-
-
-	@Override
 	public Integer getInvNr() {
-		// TODO Auto-generated method stub
 		return invNr;
 	}
 
@@ -36,9 +32,7 @@ public class AcousticGuitars implements Guitars {
 		this.invNr = invNr;
 	}
 
-	@Override
 	public String getType() {
-		// TODO Auto-generated method stub
 		return type;
 	}
 
@@ -46,9 +40,7 @@ public class AcousticGuitars implements Guitars {
 		this.type = type;
 	}
 
-	@Override
 	public String getModel() {
-		// TODO Auto-generated method stub
 		return model;
 	}
 
@@ -56,9 +48,7 @@ public class AcousticGuitars implements Guitars {
 		this.model = model;
 	}
 
-	@Override
 	public String getPrice() {
-		// TODO Auto-generated method stub
 		return price;
 	}
 
@@ -66,9 +56,7 @@ public class AcousticGuitars implements Guitars {
 		this.price = price;
 	}
 
-	@Override
 	public String getCompany() {
-		// TODO Auto-generated method stub
 		return company;
 	}
 
@@ -76,15 +64,12 @@ public class AcousticGuitars implements Guitars {
 		this.company = company;
 	}
 
-	@Override
-	public void setGuitarType(String guitarType) {
-		this.guitarType = guitarType;
-		
-	}
-
 	public String getGuitarType() {
 		return guitarType;
 	}
 
-	
+	public void setGuitarType(String guitarType) {
+		this.guitarType = guitarType;
+	}
+
 }

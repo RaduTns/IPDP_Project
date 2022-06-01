@@ -6,10 +6,10 @@ public class BassGuitar implements Guitars {
 	private String model;
 	private String price;
 	private String company;
-	private GuitarType guitarType;
+	private String guitarType;
 	private String stringsNumber;
 
-	public BassGuitar(Integer invNr, String type, String model, String price, String company, GuitarType guitarType,
+	public BassGuitar(Integer invNr, String type, String model, String price, String company, String guitarType,
 			String stringsNumber) {
 		super();
 		this.invNr = invNr;
@@ -25,7 +25,7 @@ public class BassGuitar implements Guitars {
 		super();
 	}
 
-	public GuitarType getGuitarType() {
+	public String getGuitarType() {
 		return guitarType;
 	}
 
@@ -70,7 +70,7 @@ public class BassGuitar implements Guitars {
 	}
 
 	@Override
-	public void setGuitarType(GuitarType guitarType) {
+	public void setGuitarType(String guitarType) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+
+	<h2>Tabel bun</h2>
+	<h:form>
+		<div class="table">
+			<p:dataTable id="table" var="inventory"
+				value="#{amplifierView.drumsDTO}">
+				<p:column headerText="Inventory Number"
+					filterBy="#{inventory.invNr}" filterMatchMode="contains">
+					<h:outputText value="#{inventory.invNr}" />
+				</p:column>
+				<p:column headerText="Type"
+					filterBy="#{inventory.type}" filterMatchMode="contains">
+					<h:outputText value="#{inventory.type}" />
+				</p:column>
+				<p:column headerText="Name"
+					filterBy="#{inventory.model}" filterMatchMode="contains">
+					<h:outputText value="#{inventory.model}" />
+				</p:column>
+				<p:column headerText="Price"
+					filterBy="#{inventory.price}" filterMatchMode="contains">
+					<h:outputText value="#{inventory.price}" />
+				</p:column>
+				<p:column headerText="Supplier" filterBy="#{inventory.company}"
+					filterMatchMode="contains">
+					<h:outputText value="#{inventory.company}" />
+				</p:column>
+				<p:column headerText="Pieces Number" filterBy="#{inventory.pieces}"
+					filterMatchMode="contains">
+					<h:outputText value="#{inventory.pieces}" />
+				</p:column>
+				<p:column headerText="Actions on object" > 
+				<p:commandButton type="button" action="#{amplifierView.delete(inventory)}" value="Delete" styleClass="ui-button-raised ui-button-warning ui-button-flat"/>
+				<p:commandButton type="button" value="Edit" styleClass="ui-button-raised ui-button-warning ui-button-flat"/>
+				</p:column>
+				
+			</p:dataTable>
+			
+			<p:commandButton type="button" value="Add" styleClass="ui-button-raised ui-button-warning ui-button-flat"/>
+		</div>
+	</h:form>
+</h:body>
+</html>
