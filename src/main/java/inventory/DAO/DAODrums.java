@@ -7,5 +7,5 @@ import inventory.model.Drums;
 
 public interface DAODrums extends DAO<Drums> {
 
-	List<Drums> getByPiecesNumber(String pieces) throws SQLException;
+	List<Drums> getByPieces(String pieces) throws SQLException;
 }

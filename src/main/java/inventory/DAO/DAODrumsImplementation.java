@@ -32,7 +32,7 @@ public class DAODrumsImplementation implements DAODrums {
 	public List<Drums> getAll() throws SQLException {
 		List<Drums> drums = new ArrayList<>();
 		try {
-			drums = em.createQuery("Select f from amplifiers f").getResultList();
+			drums = em.createQuery("Select f from drums f").getResultList();
 			LOGGER.info("--------------------All Users retrieved--------------------");
 		} catch (Exception e) {
 			LOGGER.log(Level.SEVERE, "Eroare " + e);
@@ -54,7 +54,7 @@ public class DAODrumsImplementation implements DAODrums {
 
 
 	@Override
-	public List<Drums> getByPiecesNumber(String pieces) throws SQLException {
+	public List<Drums> getByPieces(String pieces) throws SQLException {
 		List<Drums> drumsByPiecesNumber = new ArrayList<>();
 		try {
 		drumsByPiecesNumber = em.createQuery("Select f from drums f where f.pieces like :filteredValue")

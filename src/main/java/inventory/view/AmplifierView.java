@@ -12,6 +12,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import inventory.controller.*;
 import inventory.controller.dto.AmplifiersDTO;
+import inventory.controller.dto.DrumsDTO;
 import inventory.model.MusicalInstrumentType;
 
 @Named
@@ -22,11 +23,15 @@ public class AmplifierView implements Serializable {
 	AmplifierController amplifierController;
 	@Inject
 	InstrumentsFactory instrumentsFactory;
+	@Inject
+	DrumsController drumsController;
 	private List<AmplifiersDTO> amplifiersDTO = new ArrayList<>();
+	private List<DrumsDTO> drumsDTO = new ArrayList<>();
 
 	@PostConstruct
 	public void init() {		
 		amplifiersDTO = amplifierController.getAll();
+		drumsDTO = drumsController.getAll();
 		/*
 		 * for(AmplifiersDTO amplifier: amplifiersDTO) {
 		 * instrumentsFactory.getInstrument(MusicalInstrumentType.valueOf(amplifier.getType()));
@@ -42,5 +47,16 @@ public class AmplifierView implements Serializable {
 	public void setAmplifiersDTO(List<AmplifiersDTO> amplifiers) {
 		this.amplifiersDTO = amplifiers;
 	}
+
+	public List<DrumsDTO> getDrumsDTO() {
+		return drumsDTO.stream().sorted(Comparator.comparing(DrumsDTO::getInvNr))
+				.collect(Collectors.toList());
+	}
+
+	public void setDrumsDTO(List<DrumsDTO> drumsDTO) {
+		this.drumsDTO = drumsDTO;
+	}
+	
+	
 
 }

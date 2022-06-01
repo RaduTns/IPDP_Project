@@ -1,7 +1,5 @@
 package inventory.controller.dto;
 
-import javax.persistence.Column;
-
 public class AmplifiersDTO {
 	private Integer invNr;
 	private String type;

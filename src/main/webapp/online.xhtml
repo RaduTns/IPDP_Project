@@ -12,7 +12,7 @@
 	<h:form>
 		<div class="table">
 			<p:dataTable id="table" var="inventory"
-				value="#{amplifierView.amplifiersDTO}">
+				value="#{amplifierView.drumsDTO}">
 				<p:column headerText="Cost Center"
 					filterBy="#{inventory.invNr}" filterMatchMode="contains">
 					<h:outputText value="#{inventory.invNr}" />
@@ -33,14 +33,14 @@
 					filterMatchMode="contains">
 					<h:outputText value="#{inventory.company}" />
 				</p:column>
-				<p:column headerText="User" filterBy="#{inventory.tech}"
+				<p:column headerText="User" filterBy="#{inventory.pieces}"
 					filterMatchMode="contains">
-					<h:outputText value="#{inventory.tech}" />
+					<h:outputText value="#{inventory.pieces}" />
 				</p:column>
-				<p:column headerText="Location" filterBy="#{inventory.knobs}"
+				<!-- <p:column headerText="Location" filterBy="#{inventory.knobs}"
 					filterMatchMode="contains">
 					<h:outputText value="#{inventory.knobs}" />
-				</p:column>
+				</p:column> -->
 			</p:dataTable>
 		</div>
 	</h:form>

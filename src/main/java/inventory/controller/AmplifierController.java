@@ -28,7 +28,7 @@ public class AmplifierController {
 			DTOMapper dtoMapper = new DTOMapper();
 			for(Amplifiers amplifier :amplifiers) {
 				LOGGER.log(Level.INFO,"getAll() working as intended");
-				amplifiersDTO.add(dtoMapper.toDTO(amplifier));
+				amplifiersDTO.add(dtoMapper.toAmplifiersDTO(amplifier));
 			}
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "EROARE" + e);
@@ -43,7 +43,7 @@ public class AmplifierController {
 			Amplifiers amplifiers = DAOAmpImp.getByInventoryNumber(inventoryNumber);
 			DTOMapper dtoMapper = new DTOMapper();			
 			LOGGER.log(Level.INFO,"getByInventoryNumber("+inventoryNumber+") working as intended");
-			amplifierDTO=dtoMapper.toDTO(amplifiers);
+			amplifierDTO=dtoMapper.toAmplifiersDTO(amplifiers);
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "EROARE" + e);
 		}
@@ -58,7 +58,7 @@ public class AmplifierController {
 			DTOMapper dtoMapper = new DTOMapper();
 			for(Amplifiers amplifier :amplifiers) {
 				LOGGER.log(Level.INFO,"getAll() working as intended");
-				amplifiersDTO.add(dtoMapper.toDTO(amplifier));
+				amplifiersDTO.add(dtoMapper.toAmplifiersDTO(amplifier));
 			}
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "EROARE" + e);
@@ -74,7 +74,23 @@ public class AmplifierController {
 			DTOMapper dtoMapper = new DTOMapper();
 			for(Amplifiers amplifier :amplifiers) {
 				LOGGER.log(Level.INFO,"getAll() working as intended");
-				amplifiersDTO.add(dtoMapper.toDTO(amplifier));
+				amplifiersDTO.add(dtoMapper.toAmplifiersDTO(amplifier));
+			}
+		} catch (SQLException e) {
+			LOGGER.log(Level.SEVERE, "EROARE" + e);
+		}
+		return amplifiersDTO;
+	}
+	
+	public List<AmplifiersDTO> getByCompany(String company) {
+
+		List<AmplifiersDTO> amplifiersDTO = new ArrayList<>();
+		try {
+			List<Amplifiers> amplifiers = DAOAmpImp.getByCompany(company);
+			DTOMapper dtoMapper = new DTOMapper();
+			for(Amplifiers amplifier :amplifiers) {
+				LOGGER.log(Level.INFO,"getByCompany() working as intended");
+				amplifiersDTO.add(dtoMapper.toAmplifiersDTO(amplifier));
 			}
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "EROARE" + e);
