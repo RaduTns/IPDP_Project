@@ -10,58 +10,36 @@
 <h:body>
 	<h2>Tabel bun</h2>
 	<h:form>
-		<p:selectOneMenu id="c" value="#{inventoryView.selectedCostCenter}">
-			<f:selectItems value="#{inventoryView.costCenterList}" />
-			<p:ajax event="change" update="table" 
-				listener="#{inventoryView.costCenterChanged()}" 
-				process="@this" />
-		</p:selectOneMenu>
 		<div class="table">
 			<p:dataTable id="table" var="inventory"
-				value="#{inventoryView.inventoryList}">
+				value="#{amplifierView.amplifiersDTO}">
 				<p:column headerText="Cost Center"
-					filterBy="#{inventory.costCenter}" filterMatchMode="contains">
-					<h:outputText value="#{inventory.costCenter}" />
+					filterBy="#{inventory.invNr}" filterMatchMode="contains">
+					<h:outputText value="#{inventory.invNr}" />
 				</p:column>
 				<p:column headerText="Inventory Number"
-					filterBy="#{inventory.inventoryNumber}" filterMatchMode="contains">
-					<h:outputText value="#{inventory.inventoryNumber}" />
+					filterBy="#{inventory.type}" filterMatchMode="contains">
+					<h:outputText value="#{inventory.type}" />
 				</p:column>
 				<p:column headerText="Description"
-					filterBy="#{inventory.description}" filterMatchMode="contains">
-					<h:outputText value="#{inventory.description}" />
+					filterBy="#{inventory.model}" filterMatchMode="contains">
+					<h:outputText value="#{inventory.model}" />
 				</p:column>
 				<p:column headerText="Serial Number"
-					filterBy="#{inventory.serialNumber}" filterMatchMode="contains">
-					<h:outputText value="#{inventory.serialNumber}" />
+					filterBy="#{inventory.price}" filterMatchMode="contains">
+					<h:outputText value="#{inventory.price}" />
 				</p:column>
-				<p:column headerText="Supplier" filterBy="#{inventory.supplier}"
+				<p:column headerText="Supplier" filterBy="#{inventory.company}"
 					filterMatchMode="contains">
-					<h:outputText value="#{inventory.supplier}" />
+					<h:outputText value="#{inventory.company}" />
 				</p:column>
-				<p:column headerText="User" filterBy="#{inventory.user}"
+				<p:column headerText="User" filterBy="#{inventory.tech}"
 					filterMatchMode="contains">
-					<h:outputText value="#{inventory.user}" />
+					<h:outputText value="#{inventory.tech}" />
 				</p:column>
-				<p:column headerText="Location" filterBy="#{inventory.location}"
+				<p:column headerText="Location" filterBy="#{inventory.knobs}"
 					filterMatchMode="contains">
-					<h:outputText value="#{inventory.location}" />
-				</p:column>
-				<p:column headerText="Room" filterBy="#{inventory.room}"
-					filterMatchMode="contains">
-					<h:outputText value="#{inventory.room}" />
-				</p:column>
-				<p:column headerText="Date" filterBy="#{inventory.date}"
-					filterMatchMode="contains">
-					<h:outputText value="#{inventory.date}" />
-				</p:column>
-				<p:column headerText="Value" filterBy="#{inventory.value}"
-					filterMatchMode="contains">
-					<h:outputText value="#{inventory.value}" />
-				</p:column>
-				<p:column headerText="Residual Value"
-					filterBy="#{inventory.residualValue}" filterMatchMode="contains">
-					<h:outputText value="#{inventory.residualValue}" />
+					<h:outputText value="#{inventory.knobs}" />
 				</p:column>
 			</p:dataTable>
 		</div>
