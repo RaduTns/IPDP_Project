@@ -17,7 +17,7 @@ import inventory.model.MusicalInstrumentType;
 
 @Named
 @SessionScoped
-public class AmplifierView implements Serializable {
+public class InventoryView implements Serializable {
 
 	@Inject
 	AmplifierController amplifierController;

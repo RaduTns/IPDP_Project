@@ -13,7 +13,7 @@
 	<h:form>
 		<div class="table">
 			<p:dataTable id="table" var="inventory"
-				value="#{amplifierView.drumsDTO}">
+				value="#{inventoryView.drumsDTO}">
 				<p:column headerText="Inventory Number"
 					filterBy="#{inventory.invNr}" filterMatchMode="contains">
 					<h:outputText value="#{inventory.invNr}" />
